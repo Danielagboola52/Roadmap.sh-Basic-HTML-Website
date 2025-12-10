@@ -1,0 +1,257 @@
+/* ==================== 1. MODERN RESET & FONTS ==================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  
+  /* ==================== 2. CSS VARIABLES (including dark mode) ==================== */
+  :root {
+    --color-primary: #2563eb;
+    --color-primary-dark: #1d4ed8;
+    --color-bg: #ffffff;
+    --color-text: #1f2937;
+    --color-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --max-width: 1200px;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --radius: 0.5rem;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #0f172a;
+      --color-text: #e2e8f0;
+      --color-muted: #94a3b8;
+      --color-border: #334155;
+    }
+  }
+  
+  /* ==================== 3. TYPOGRAPHY & CONTAINER ==================== */
+  h1, h2, h3 { font-weight: 700; line-height: 1.2; margin-bottom: var(--spacing-md); color: var(--color-text); }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  
+  p, ul, li { margin-bottom: var(--spacing-sm); color: var(--color-muted); }
+  
+  a { color: var(--color-primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  ul { list-style: none; }
+  
+  .container {
+    width: min(100% - 2rem, var(--max-width));
+    margin-inline: auto;
+  }
+  
+  /* ==================== 4. HEADER & NAVIGATION ==================== */
+  header {
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 1000;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-text);
+  }
+  
+  .logo img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .hamburger, .hamburger::before, .hamburger::after {
+    content: "";
+    width: 28px;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 3px;
+    transition: all 0.3s;
+  }
+  
+  .hamburger::before { transform: translateY(-8px); }
+  .hamburger::after  { transform: translateY(8px); }
+  
+  .nav-toggle.active .hamburger { background: transparent; }
+  .nav-toggle.active .hamburger::before { transform: translateY(0) rotate(45deg); }
+  .nav-toggle.active .hamburger::after  { transform: translateY(-3px) rotate(-45deg); }
+  
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg);
+    padding: 5rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .nav.active { transform: translateX(0); }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .nav-link:hover { color: var(--color-primary); }
+  
+  @media (min-width: 768px) {
+    .nav-toggle { display: none; }
+    .nav {
+      position: static;
+      transform: none;
+      padding: 0;
+      background: none;
+    }
+    .nav-list {
+      flex-direction: row;
+      gap: var(--spacing-lg);
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* ==================== 5. HERO SECTION ==================== */
+  .hero {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+  .hero p { font-size: 1.25rem; color: var(--color-primary); }
+  
+  /* ==================== 6. GRID LAYOUT (Projects / Experience / Education) ==================== */
+  .grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+  
+  .grid > * {
+    background: var(--color-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+  }
+  
+  .grid ul { color: var(--color-text); }
+  
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  /* ==================== 7. REVIEWS SECTION ==================== */
+  .reviews {
+    margin: var(--spacing-lg) 0;
+  }
+  
+  .reviews h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .reviews figure {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  
+  .reviews blockquote {
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+  
+  .reviews figcaption {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  /* ==================== 8. CONTACT FORM ==================== */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: var(--spacing-md);
+  }
+  
+  form label {
+    font-weight: 600;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font: inherit;
+  }
+  
+  form button {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  form button:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  /* ==================== 9. FOOTER ==================== */
+  footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }

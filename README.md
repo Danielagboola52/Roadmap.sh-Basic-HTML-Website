@@ -1,13 +1,9 @@
-# Basic HTML Website - roadmap.sh
+# Basic HTML Website
 
-A simple multi-page HTML-only website built as part of the roadmap.sh frontend path.
+Live demo: https://danielagboola52.github.io/Roadmap.sh-Basic-HTML-Website/
 
-## Pages
-- Home
-- Projects
-- Articles
-- Contact (with form)
+Project file: https://github.com/Danielagboola52/Roadmap.sh-Basic-HTML-Website/blob/master/index.html
 
-Live URL: https://danielagboola52.github.io/Roadmap.sh-Basic-HTML-Website/
+A simple multi-page website built with pure HTML as per roadmap.sh project requirements.
 
-(No CSS added yet — pure semantic HTML structure only)
+[Project URL](https://roadmap.sh/projects/portfolio-website)
