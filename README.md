@@ -1,9 +1,19 @@
-# Basic HTML Website
+# Basic HTML Website + Responsive Styling – roadmap.sh
 
-Live demo: https://danielagboola52.github.io/Roadmap.sh-Basic-HTML-Website/
+A multi-page personal portfolio website built with pure HTML and modern responsive CSS.
 
-Project file: https://github.com/Danielagboola52/Roadmap.sh-Basic-HTML-Website/blob/master/index.html
+**Live demo:** https://danielagboola52.github.io/Roadmap.sh-Basic-HTML-Website/
 
-A simple multi-page website built with pure HTML as per roadmap.sh project requirements.
+**Source code:** https://github.com/Danielagboola52/Roadmap.sh-Basic-HTML-Website
 
-[Project URL](https://roadmap.sh/projects/portfolio-website)
+Features:
+- Semantic HTML structure
+- Fully responsive design (mobile-first)
+- Mobile hamburger menu
+- CSS Grid & Flexbox layout
+- Google Fonts + dark mode support
+- Clean, professional styling
+
+Completed roadmap.sh projects:
+- Basic HTML Website
+- Responsive Portfolio with CSS
